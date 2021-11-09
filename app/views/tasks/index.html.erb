@@ -1,0 +1,14 @@
+<div class="list">
+
+<%= link_to "Ajouter une tâche", new_task_path%>
+
+<% @tasks.each do |task| %>
+  <p> <%= task.id  %> </p>
+  <p> <%= task.name  %> </p>
+  <p> <%= task.completed  %> </p>
+  <%= link_to "Voir les détails", task_path(task)%>
+  <%= link_to "Editer la tache", edit_task_path(task) %>
+  <%= link_to "Supprimer la tache", delete_task_path(task), data: {confirm: "Are you sure?"}, method: :delete%>
+<% end %>
+
+</div>
